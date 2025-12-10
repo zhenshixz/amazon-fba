@@ -115,7 +115,8 @@ const InventoryOverview: React.FC = () => {
       <div className="space-y-6">
         <h3 className="text-xl font-bold text-gray-800 px-1 border-l-4 border-purple-600 pl-3">库龄分布</h3>
         
-        <div className="space-y-6">
+        {/* Changed from flex/space-y to grid layout for 2 items per row */}
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           {ageData.map((row, index) => (
              <div key={index} className="flex flex-col space-y-2">
                 {/* Salesperson Name Header */}
@@ -124,7 +125,7 @@ const InventoryOverview: React.FC = () => {
                 </div>
                 
                 {/* Specific Table per Salesperson */}
-                <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden h-full">
                    <div className="overflow-x-auto">
                       <table className="w-full text-base text-left text-gray-700">
                         <thead className="bg-gray-50 text-gray-700 font-medium text-sm">
